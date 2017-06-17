@@ -11,7 +11,9 @@ public class App {
 	public static void main(String[] args) throws IOException {
 
 		// URL xml
-		URL url = new URL("http://api.nbp.pl/api/exchangerates/rates/c/eur/?format=xml");
+		final String urlTableC = "http://api.nbp.pl/api/exchangerates/tables/c/?format=xml";
+		//final String euroUrl = "http://api.nbp.pl/api/exchangerates/rates/c/eur/?format=xml";
+		URL url = new URL(urlTableC);
 
 		System.out.println("Currency rate from www.nbp.pl \n");
 
@@ -21,8 +23,8 @@ public class App {
 
 			SAXParserFactory factory = SAXParserFactory.newInstance();
 			SAXParser saxParser = factory.newSAXParser();
-			CurrencyHandler userhandler = new CurrencyHandler();
-			saxParser.parse(is, userhandler);
+			CurrencyHandler currencyHandler = new CurrencyHandler();
+			saxParser.parse(is, currencyHandler);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

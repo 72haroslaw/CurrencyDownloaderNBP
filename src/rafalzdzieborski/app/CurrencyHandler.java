@@ -47,14 +47,14 @@ public class CurrencyHandler extends DefaultHandler{
 				System.out.println("Table no: " + new String(ch, start, length));
 				tableNo = false;
 			} else if (effectiveDate) {
-				System.out.println("Effective Date: " + new String(ch, start, length));
+				System.out.println("Effective Date: " + new String(ch, start, length) + "\n");
 				effectiveDate = false;
 			} else if (bid) {
 				System.out.println("Bid: " + new String(ch, start, length) + " PLN");
 				bid = false;
 			}
 			else if (ask) {
-				System.out.println("Ask: " + new String(ch, start, length) + " PLN");
+				System.out.println("Ask: " + new String(ch, start, length) + " PLN\n");
 				ask = false;
 			}
 		}
