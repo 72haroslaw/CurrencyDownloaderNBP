@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>rafalzdzieborski.app</groupId>
   <artifactId>CurrencyDownloaderNBP</artifactId>
-  <version>0.0.4-SNAPSHOT</version>
+  <version>0.0.5-SNAPSHOT</version>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -18,5 +18,4 @@
   </build>
   <name>Rafal Zdzieborski</name>
   <description>Program downloads currency rate from the api.nbp.pl in Polish Zloty (PLN).</description>
-  
 </project>
