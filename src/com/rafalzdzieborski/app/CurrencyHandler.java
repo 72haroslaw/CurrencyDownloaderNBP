@@ -14,14 +14,12 @@ public class CurrencyHandler extends DefaultHandler {
     private ArrayList<Currency> currencyList = new ArrayList<Currency>();
     private boolean bCurrency = false;
     private boolean bCurrencyCode = false;
-    private boolean bTableNo = false;
-    private boolean bEffectiveDate = false;
     private boolean bBid = false;
     private boolean bAsk = false;
 
     public void startElement(String uri, String localName,
                              String qName, Attributes attributes) throws SAXException {
-        tagContent = "";
+        tagContent = null;
         if (qName.equalsIgnoreCase("Rate")) {
             currency = new Currency();
         }
@@ -32,12 +30,11 @@ public class CurrencyHandler extends DefaultHandler {
 
         if (qName.equalsIgnoreCase("Rate")) {
             currencyList.add(currency);
-
         } else if (qName.equalsIgnoreCase("Currency")) {
             currency.setCurrency(tagContent);
         } else if (qName.equalsIgnoreCase("Code")) {
             currency.setCurrencyCode(tagContent);
-        }else if (qName.equalsIgnoreCase("Bid")) {
+        } else if (qName.equalsIgnoreCase("Bid")) {
             currency.setBid(tagContent);
         } else if (qName.equalsIgnoreCase("Ask")) {
             currency.setAsk(tagContent);
@@ -54,5 +51,4 @@ public class CurrencyHandler extends DefaultHandler {
             System.out.println(it.next().toString());
         }
     }
-
 }

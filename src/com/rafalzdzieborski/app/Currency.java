@@ -4,17 +4,14 @@ public class Currency {
 
     private String currency;
     private String currencyCode;
-    private String tableNo;
-    private String effectiveDate;
     private String bid;
     private String ask;
     private String tagName;
 
-    public Currency(){
-
+    public Currency() {
     }
 
-    public Currency(String currency, String currencyCode, String tableNo, String effectiveDate, String bid, String ask, String tagName) {
+    public Currency(String currency, String currencyCode, String bid, String ask, String tagName) {
         this.currency = currency;
         this.currencyCode = currencyCode;
         this.bid = bid;
@@ -63,7 +60,7 @@ public class Currency {
     }
 
     public String toString() {
-        return  "\nCurrency: " + currency +
+        return "\nCurrency: " + currency +
                 "\nCurrency Code: " + currencyCode +
                 "\nBid: " + bid + " PLN" +
                 "\nAsk: " + ask + " PLN";
